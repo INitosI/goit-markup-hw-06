@@ -21,7 +21,7 @@
   </head>
   <body>
     <header class="header">
-      <!-- <div class="container header-container">
+      <div class="container header-container">
         <nav class="header-nav">
           <a class="header-logo" href="./index.html">
             Web<span class="header-logo-color">Studio</span>
@@ -56,18 +56,122 @@
             </li>
           </ul>
         </address>
-      </div> -->
+        <button
+          class="burger"
+          type="button"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <svg class="icon-burger" width="24" height="24" aria-hidden="true">
+            <use href="images/icons.svg#icon-burger"></use>
+          </svg>
+          <!-- <span class="burger-line"></span> -->
+        </button>
+        <!-- Mob menu -->
+        <div class="mob-menu">
+          <button class="mob-cls-btn" type="button">
+            <svg class="mob-icon-close" width="8" height="8" aria-hidden="true">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+          <nav class="mob-nav">
+            <ul class="mob-menu-list">
+              <li class="mob-menu-item">
+                <a class="mob-menu-link mob-item-first" href="./index.html"
+                  >Studio</a
+                >
+              </li>
+              <li class="mob-menu-item">
+                <a class="mob-menu-link mob-item-second" href="#Portfolio"
+                  >Portfolio</a
+                >
+              </li>
+              <li class="mob-menu-item">
+                <a class="mob-menu-link" href="#Contacts">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <address class="mob-contacts">
+              <ul class="mob-contacts-list">
+                <li class="mob-contacts-item">
+                  <a
+                    class="mob-contacts-link mob-color"
+                    href="tel:+110001111111"
+                    >+11 (000) 111-11-11</a
+                  >
+                </li>
+                <li class="mob-contacts-item">
+                  <a class="mob-contacts-link" href="mailto:info@devstudio.com"
+                    >info@devstudio.com</a
+                  >
+                </li>
+              </ul>
+            </address>
+            <ul class="social-list">
+              <li class="social-list__item">
+                <a class="social-list__link" href="#" aria-label="Instagram">
+                  <svg
+                    class="social-list__icon"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list__item">
+                <a class="social-list__link" href="#" aria-label="Twitter">
+                  <svg
+                    class="social-list__icon"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list__item">
+                <a class="social-list__link" href="#" aria-label="Facebook">
+                  <svg
+                    class="social-list__icon"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list__item">
+                <a class="social-list__link" href="#" aria-label="LinkedIn">
+                  <svg
+                    class="social-list__icon"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                  >
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
     <main class="main">
       <!-- 1 Hero Section -->
-      <!-- <section class="hero-section section">
+      <section class="hero-section section">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
           <button data-modal-open class="hero-button" type="button">
             Order Service
           </button>
         </div>
-      </section> -->
+      </section>
       <!-- 2 Advantages -->
       <section class="advantages-section section">
         <div class="container">
@@ -668,5 +772,26 @@
       </div>
     </div> -->
     <script src="./js/modal.js"></script>
+
+    <script>
+      const openBtn = document.querySelector('.burger');
+      const menu = document.querySelector('.mob-menu');
+      const closeBtn = document.querySelector('.mob-cls-btn');
+
+      function openMenu() {
+        menu.classList.add('open');
+        openBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menu.classList.remove('open');
+        openBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      openBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+    </script>
   </body>
 </html>

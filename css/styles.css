@@ -148,6 +148,8 @@ ul {
   text-transform: uppercase;
   color: #4d5ae5;
   margin-right: 76px;
+  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 .header-logo-color {
@@ -155,7 +157,8 @@ ul {
 }
 
 .header-menu {
-  display: flex;
+  /* display: flex; */
+  display: none;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -193,6 +196,7 @@ ul {
 }
 
 .header-contacts-link {
+  display: none;
   font-family: inherit;
   font-weight: 400;
   font-size: 16px;
@@ -248,6 +252,203 @@ ul {
 .header-contacts-link:focus {
   color: var(--ocean);
 }
+
+.burger {
+  display: flex;
+
+  /* display: flex;
+  width: 16.8px;
+  height: 14.4px;
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: flex-end; */
+}
+
+.icon-burger {
+  fill: #2f2f37;
+}
+
+/* .burger-line {
+  display: block;
+  width: 100%;
+  height: 2.4px;
+  background-color: #2f2f37;
+  border-radius: 2px;
+}
+
+.burger-line::before,
+.burger-line::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2.4px;
+  background-color: #2f2f37;
+  border-radius: 2px;
+  transition: transform 0.3s ease 0s;
+  left: 0;
+}
+
+.burger-line::before {
+  top: 0;
+}
+
+.burger-line::after {
+  bottom: 0;
+} */
+
+/* -----------------------MOB MENU---------------------------- */
+
+.mob-menu {
+  display: none;
+
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  background-color: var(--white);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  padding: 24px 24px 40px 16px;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms ease, transform 250ms ease,
+    visibility 0s linear 250ms;
+}
+
+.mob-menu.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 250ms ease, transform 250ms ease, visibility 0s;
+}
+
+.mob-cls-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid var(--cornflower);
+}
+
+.mob-icon-close {
+}
+
+.mob-nav {
+  margin-top: 72px;
+}
+
+.mob-menu-list {
+  display: flex;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 111%;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mob-menu-item {
+}
+
+.mob-menu-link,
+.mob-menu-link:link,
+.mob-menu-link:visited {
+  color: var(--navy-blue);
+}
+
+.mob-menu-link:hover,
+.mob-menu-link:focus {
+  color: var(--ocean);
+}
+
+.mob-item-first {
+}
+
+.mob-item-second {
+}
+
+.mob-contacts {
+}
+
+.mob-contacts-list {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+
+.mob-contacts-item {
+}
+
+.mob-contacts-link {
+  color: var(--slate);
+}
+
+.mob-color {
+  color: var(--iris);
+}
+
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.social-list__item {
+  width: 40px;
+  height: 40px;
+}
+
+.social-list__link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--iris, #4d5ae5);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.social-list__icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--cloud, #f4f4fd);
+  display: block;
+}
+
+/* .social-list:hover,
+.social-list:focus {
+  background-color: var(--green);
+} */
 
 /* HERO */
 
@@ -1007,6 +1208,29 @@ ul {
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
+  }
+
+  .header-logo {
+    padding-bottom: none;
+    padding-top: none;
+  }
+  .header-menu {
+    display: flex;
+  }
+
+  .header-contacts-link {
+    display: block;
+  }
+
+  .burger {
+    display: none;
+  }
+  .burger-cls {
+    display: none;
+  }
+
+  .mob-menu {
+    display: none;
   }
 
   .hero-section {
