@@ -1452,6 +1452,10 @@ ul {
     margin-bottom: 48px;
   }
 
+  .header-contacts-list {
+    flex-direction: row;
+  }
+
   .advantages-section {
     padding-bottom: 120px;
     padding-top: 120px;
