@@ -1499,4 +1499,15 @@ ul {
   .footer {
     padding: 100px 0;
   }
+  .footer .container {
+    align-items: start;
+  }
+  .footer-tablet-wrapper {
+    gap: 120px;
+  }
+
+  .footer-main-wrapper {
+    display: flex;
+    gap: 80px;
+  }
 }
